@@ -1,3 +1,4 @@
 {
-	"mongoURI": "mongodb+srv://dima123:dima123@contactus-cpcp6.mongodb.net/test?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://dima123:dima123@contactus-cpcp6.mongodb.net/test?retryWrites=true&w=majority",
+   "jwtSecret": "secret"
 }
