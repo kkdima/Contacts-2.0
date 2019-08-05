@@ -10,12 +10,10 @@ const User = require("../models/User");
 // @route   POST api/users
 // @desc    Register a user
 // @access  Public
-//
-
 router.post(
 	"/",
 	[
-		check("name", "Name is required")
+		check("name", "Please add name")
 			.not()
 			.isEmpty(),
 		check("email", "Please include the valid email").isEmail(),
@@ -36,7 +34,7 @@ router.post(
 			let user = await User.findOne({ email });
 			
 			if (user) {
-				return res.status(400).json({ message: "User already exist" });
+				return res.status(400).json({ msg: "User already exist" });
 			}
 			user = new User({
 				name,
