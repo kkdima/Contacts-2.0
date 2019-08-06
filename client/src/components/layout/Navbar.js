@@ -3,6 +3,31 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 import ContactContext from "../../context/contact/contactContext";
+import user from "./user.svg";
+import phone from "./phone.svg";
+
+const Logo = () => {
+	return (
+		<div id='wrapper'>
+			<div className='first-card'>
+				<div className="skew-card"></div>
+			</div>
+			<img src={user} alt='' style={{
+				width: "27px",
+				position: 'absolute',
+				bottom: '24px',
+				left: '16px'
+			}}/>
+			<div className="second-card"/>
+			<img src={phone} alt='' style={{
+				width: "35px",
+				position: 'absolute',
+				bottom: '35.5px',
+				left: '43px'
+			}}/>
+		</div>
+	);
+};
 
 const Navbar = ({ title, icon }) => {
 	const authContext = useContext(AuthContext);
@@ -14,7 +39,7 @@ const Navbar = ({ title, icon }) => {
 	const onLogout = () => {
 		logout();
 		clearContacts();
-	}
+	};
 
 	const authLinks = (
 		<Fragment>
@@ -40,26 +65,24 @@ const Navbar = ({ title, icon }) => {
 	);
 
 	return (
-		<div className='navbar bg-primary'>
-			<h1>
-				<i className={icon} />
-				{title}
-			</h1>
-			<ul>
-				{ isAuthenticated ? authLinks : guestLinks }
-			</ul>
+		<div className='navbar'>
+			<div className='navbar-first-part'>
+				<Logo />
+				<h1>{title}</h1>
+			</div>
+			<div >
+				<ul>{isAuthenticated ? authLinks : null}</ul>
+			</div>
 		</div>
 	);
 };
 
 Navbar.propTypes = {
-	title: PropTypes.string.isRequired,
-	icon: PropTypes.string
+	title: PropTypes.string.isRequired
 };
 
 Navbar.defaultProps = {
-	title: "Contactus",
-	icon: "fas fa-id-card-alt"
+	title: "Contacts 2.0"
 };
 
 export default Navbar;

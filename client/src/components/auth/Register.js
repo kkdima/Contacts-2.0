@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import AlertContext from "../../context/alert/alertContext";
 import AuthContext from "../../context/auth/authContext";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Register = props => {
 	const alertContext = useContext(AlertContext);
@@ -10,8 +12,8 @@ const Register = props => {
 	const { register, error, clearErrors, isAuthenticated } = authContext;
 
 	useEffect(() => {
-		if(isAuthenticated) {
-			props.history.push('/')
+		if (isAuthenticated) {
+			props.history.push("/");
 		}
 		if (error === "User already exist") {
 			setAlert(error, "danger");
@@ -48,53 +50,63 @@ const Register = props => {
 
 	return (
 		<div className='form-container'>
-			<h1>
-				Account <span className='text-primary'>Register</span>
-			</h1>
-			<form onSubmit={onSubmit}>
-				<div className='form-group'>
-					<label htmlFor='name'>Name</label>
-					<input type='text' name='name' value={name} onChange={onChange} required />
-				</div>
+			<div className='navbar-second-part'>
+				<Link id='optionChosen' to='/register'>
+					Register
+				</Link>
+				<Link to='/login'>Login</Link>
+			</div>
 
-				<div className='form-group'>
-					<label htmlFor='email'>Email address</label>
-					<input
-						type='email'
-						name='email'
-						value={email}
-						onChange={onChange}
-						required
-					/>
-				</div>
-
-				<div className='form-group'>
-					<label htmlFor='password'>Password</label>
-					<input
-						type='password'
-						name='password'
-						value={password}
-						onChange={onChange}
-						required
-						minLength='6'
-					/>
-				</div>
-
-				<div className='form-group'>
-					<label htmlFor='password2'>Password</label>
-					<input
-						type='password'
-						name='password2'
-						value={password2}
-						onChange={onChange}
-						required
-						minLength='6'
-					/>
-				</div>
+			<form onSubmit={onSubmit} id='form'>
 				<input
+					type='text'
+					name='name'
+					value={name}
+					onChange={onChange}
+					required
+					placeholder='Name'
+					className='inputSearch'
+				/>
+
+				<input
+					placeholder='Email'
+					type='email'
+					name='email'
+					value={email}
+					onChange={onChange}
+					required
+					className='inputSearch'
+				/>
+
+				<input
+					placeholder='Password'
+					type='password'
+					name='password'
+					value={password}
+					onChange={onChange}
+					required
+					minLength='6'
+					className='inputSearch'
+				/>
+
+				<input
+					placeholder='Password'
+					type='password'
+					name='password2'
+					value={password2}
+					onChange={onChange}
+					required
+					minLength='6'
+					className='inputSearch'
+				/>
+
+				<motion.input
 					type='submit'
 					value='Register'
-					className='btn btn-primary btn-block'
+					name='Search'
+					className='btn btn-dark btn-block submitButton'
+					whileHover={{ scale: 1.1 }}
+					whileTap={{ scale: 0.9, y: "5px" }}
 				/>
 			</form>
 		</div>

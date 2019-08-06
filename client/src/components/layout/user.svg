@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="32px" viewBox="0 0 27 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>typicons user</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Portrait" transform="translate(-61.000000, -64.000000)" fill="#5D8292" fill-rule="nonzero">
+            <g id="Logo" transform="translate(45.000000, 30.000000)">
+                <g id="Group" transform="translate(0.000000, 16.000000)">
+                    <g id="Rectangle-Copy-2">
+                        <g id="typicons-user" transform="translate(16.000000, 18.000000)">
+                            <path d="M21,7.5 C21,5.4285 20.16,3.5535 18.804,2.1975 C17.4465,0.84 15.5715,0 13.5,0 C11.4285,0 9.5535,0.84 8.196,2.1975 C6.84,3.5535 6,5.4285 6,7.5 C6,9.5715 6.84,11.4465 8.196,12.8025 C9.5535,14.16 11.4285,15 13.5,15 C15.5715,15 17.4465,14.16 18.804,12.8025 C20.16,11.4465 21,9.5715 21,7.5 Z M0,27.3333333 C0,29.6666667 5.0625,32 13.5,32 C21.4155,32 27,29.6666667 27,27.3333333 C27,22.6666667 21.7035,18 13.5,18 C5.0625,18 0,22.6666667 0,27.3333333 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
