@@ -65,6 +65,7 @@ const Register = props => {
 					onChange={onChange}
 					required
 					placeholder='Name'
+					id="nameForm"
 					className='inputSearch'
 				/>
 

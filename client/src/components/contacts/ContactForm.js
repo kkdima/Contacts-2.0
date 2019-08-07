@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import ContactContext from '../../context/contact/contactContext'
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
     const contactContext = useContext(ContactContext)
@@ -40,13 +41,6 @@ const ContactForm = () => {
         }
         clearAll();
     }
-    
-    // setContact({
-    //     name: "",
-    //     email: "",
-    //     phone: "",
-    //     type: "personal"
-    // })
 
     const clearAll = () => {
         clearCurrent();
@@ -60,29 +54,33 @@ const ContactForm = () => {
 				placeholder='Name'
 				name='name'
 				value={name}
-				onChange={onChange}
+                onChange={onChange}
+                className='inputSearch'                
 			/>
 			<input
 				type='email'
 				placeholder='Email'
 				name='email'
 				value={email}
-				onChange={onChange}
+                onChange={onChange}
+                className='inputSearch'
 			/>
 			<input
-				type='phone'
+				type='text'
 				placeholder='Phone'
 				name='phone'
 				value={phone}
-				onChange={onChange}
+                onChange={onChange}
+                className='inputSearch'
 			/>
-			<h5>Contact Type</h5>
+			<h5 id='content-type'>Contact Type</h5>
 			<input
 				type='radio'
 				name='type'
 				value='personal'
                 checked={type === "personal"}
-                onChange={onChange}                
+                onChange={onChange}     
+                className='m'
 			/>Personal{" "}
 			<input
 				type='radio'
@@ -90,15 +88,29 @@ const ContactForm = () => {
 				value='professional'
                 checked={type === "professional"}
                 onChange={onChange}
+                className='m inputlast'
 			/>Professional
             <div>
-                <input type="submit" value={current ? 'Update Contact' : 'Add contact'} className='btn btn-primary btn-block'/>
+                {/* <input type="submit" value={current ? 'Update Contact' : 'Add contact'} className='btn btn-primary btn-block'/> */}
+                <motion.input
+                    type='submit'
+                    value={current ? 'Contact' : 'Add contact'}
+					name='Search'
+					className='btn btn-dark btn-block submitButton'
+					whileHover={{ scale: 1.1 }}
+					whileTap={{ scale: 0.9, y: "5px" }}
+                    />
             </div>
             {current && (
                 <div>
-                    <button className="btn btn-light btn-block" onClick={clearAll}>
+                    <motion.button 
+                        className="btn btn-light btn-block submitButton" 
+                        onClick={clearAll}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9, y: "5px" }}
+                    >
                         Clear
-                    </button>
+                    </motion.button>
                 </div>
             )}
 		</form>

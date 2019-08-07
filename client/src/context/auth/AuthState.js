@@ -37,9 +37,6 @@ const AuthState = props => {
 				type: USER_LOADED,
 				payload: res.data
             });
-
-            loadUser();
-
 		} catch (err) {
 			dispatch({ type: AUTH_ERROR });
 		}
